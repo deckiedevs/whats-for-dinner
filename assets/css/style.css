@@ -5,11 +5,11 @@ body, html {
 }
 
 .nav-wrapper, .brand-logo {
-    background-color: #00c853;
+    background-color: #00c853
 }
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/hero-background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/hero-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,4 +30,8 @@ body, html {
     background-color: #00c853;
     text-align: center;
     cursor: pointer;
+  }
+
+  .page-footer {
+    background-color: #00c853
   }
