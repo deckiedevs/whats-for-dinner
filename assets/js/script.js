@@ -145,6 +145,7 @@ fullRecipe = details => {
     var instructions = document.getElementById('instructions');
     var wineHeader = document.getElementById('wine-header')
     var winePairingEl = document.getElementById('wine-pairing');
+    var favIcon = document.getElementById('fav-icon')
 
     for (var i = 0; i < recipeCards.length; i++) {
         recipeCards[i].addEventListener('click', function(event) {
@@ -165,6 +166,9 @@ fullRecipe = details => {
 
             recipeInfoEl.innerHTML = `Prep Time: ${readyTime} | Servings: ${servings} | Recipe From: <a href="${sourceUrl}" target="_blank">${sourceSite}</a>`
 
+            // favorite button
+            favIcon.textContent = 'favorite_border';
+
             // grabs all ingredients from data
             var ingrList = details[index].extendedIngredients;
 
@@ -172,6 +176,10 @@ fullRecipe = details => {
                 var ingrQty = ingrList[j].measures.us.amount;
                 var ingrUnit = ingrList[j].measures.us.unitShort;
                 var ingrName = ingrList[j].name;
+                
+                if (!Number.isInteger(ingrQty)) {
+                    ingrQty = convertFraction(ingrQty).trim();
+                }
 
                 var ingrItem = document.createElement('p');
                 ingrItem.textContent = `${ingrQty} ${ingrUnit} - ${ingrName}`;
@@ -197,6 +205,29 @@ fullRecipe = details => {
         })
     }
 }
+
+convertFraction = num => {
+    var fractionObj = math.fraction(num);
+    var numerator = fractionObj.n;
+    var denominator = fractionObj.d;
+    var wholeNum = '';
+
+    if (numerator > denominator) {
+        wholeNum = Math.floor(numerator / denominator);
+        numerator %= denominator
+    }
+
+    // identifies when the fraction is a third
+    if (numerator === 333) {
+        numerator = 1;
+        denominator = 3;
+    } else if (numerator === 666) {
+        numerator = 2;
+        denominator = 3;
+    }
+    
+    return `${wholeNum} ${numerator}/${denominator}`
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     var modalElems = document.querySelectorAll('.modal');
