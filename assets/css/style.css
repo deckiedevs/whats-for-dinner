@@ -26,6 +26,10 @@ body, html {
     font-family: 'Work Sans', sans-serif;
 }
 
+.hide {
+    display: none;
+}
+
 .nav-wrapper {
     background-color: var(--tertiary-color);
     padding-left: 50px;
@@ -72,7 +76,7 @@ body, html {
     text-align: center;
   }
 
-  .hero button:hover {
+.hero button:hover {
     border: none;
     outline: 0;
     display: flex;

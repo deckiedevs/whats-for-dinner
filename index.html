@@ -46,7 +46,15 @@
 
     <!-- cards -->
     <section class="row grey lighten-4">
-        <h4 class="light-blue-text text-accent-2 center">See Some Recipe's Below and Start Cooking!</h4>
+      <!-- modal for error messages -->
+      <div id="error-modal" class="modal">
+        <div class="modal-content" id="error-message">
+        <!-- intentionally left blank -->
+        </div>
+      </div>
+      
+      <div id="suggested-recipes">
+        <h4 class="light-blue-text text-accent-2 center">See Some Recipes Below and Start Cooking!</h4>
         <div class="col s12 l4">
         <div class="card small hoverable">
             <div class="card-image">
@@ -138,9 +146,11 @@
           </div>
         </div>
       </div>
+      </div>
+      <div id="searched-recipes">
+        <!-- recipes are dynamically created -->
+      </div>
     </section>
-
-    
 
     <!-- footer -->
     <footer class="page-footer white center">
