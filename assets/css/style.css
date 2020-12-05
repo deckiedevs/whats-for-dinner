@@ -24,6 +24,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Work Sans', sans-serif;
+    color: var(--quaternary-color);
 }
 
 .hide {
@@ -91,4 +92,31 @@ body, html {
 
 .page-footer h5 {
     padding: 60px 0;
+}
+
+.card {
+    height: 400px;
+}
+
+.card .card-content, 
+.card .card-content a {
+    font-weight: bold;
+}
+#recipe-modal {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+#recipe-modal h5,
+#recipe-modal h6 { 
+    font-weight: bold;
+}
+
+#recipe-modal ol, #recipe-modal ul {
+  margin-left: 20px;
+}
+
+#recipe-modal ol li, #recipe-modal ul li {
+  margin-top: 7px;
+  padding-left: 8px;
 }
