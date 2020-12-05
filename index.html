@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>What's For Dinner?</title>
 </head>
@@ -32,12 +35,20 @@
     <div class="row hero">
         <div class="col s12 l6">
             <h1 class="light-blue-text text-accent-2"><span class="blue-grey-text text-darken-3" style="font-weight: normal;">Ran Out </br>of </span>Recipes?</h1>
-            <p>Can't decide what to eat? Enter your ingredients below and we'll help you decide!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, impedit iusto. 
-            Modi expedita vero consequatur non, hic totam quisquam neque laboriosam praesentium rem 
-            explicabo quos nam amet facilis quam fugiat.
+            <p>Can't decide what to eat? That's where we come in! </br>
+              Enter your ingredients below and we'll help you decide.
             </p>
-            <button>Explore</button>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="ingredients" type="ingredients" class="validate">
+                    <label for="ingredients">Enter ingredients here</label>
+                    <button>Let's Get Cookin'!</button>
+                  </div>
+                </div>
+              </form>
+            </div>
         </div>
         <div class="col s12 l6 hero-image">
             <img src="../whats-for-dinner/assets/images/hero-image.png" style="height: min-content;"></a>
@@ -160,8 +171,8 @@
             </a>
         </div>
         <div class="footer-copyright white">
-            <div class="container blue-grey-text">
-            © 2020 The Most OKAY'est Group
+            <div class="container blue-grey-text text-darken-2">
+            © 2020 The Most OK'est Group
             </div>
           </div>
     </footer>
