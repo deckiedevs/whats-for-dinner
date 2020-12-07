@@ -17,7 +17,7 @@ section {
 
 section h4 {
     padding-bottom: 50px;
-    font-weight: 600;
+    font-weight: bolder;
 }
 
 body, html {
@@ -25,6 +25,12 @@ body, html {
     margin: 0;
     font-family: 'Work Sans', sans-serif;
     color: var(--quaternary-color);
+    padding-bottom: 50px;
+}
+
+p {
+    padding-bottom: 50px;
+    font-size: 18px;
 }
 
 .hide {
@@ -44,8 +50,7 @@ body, html {
 .hero-image {
     background-position: inherit;
     background-repeat: no-repeat;
-    background-size: contain;
-    
+    background-size: cover;
 }
 
 .hero h1 {
@@ -59,6 +64,7 @@ body, html {
     color: var(--primary-color);
     background-color: white;
     font-family: 'Red Hat Display', sans-serif;
+    font-weight: normal;
     padding: 50px 50px 100px;
 }
 
@@ -82,7 +88,6 @@ body, html {
     border: none;
     outline: 0;
     display: flex;
-    padding: 10px 30px;
     margin-top: 25px;
     color: white;
     background-color: var(--quaternary-color);
@@ -100,8 +105,13 @@ body, html {
 
 .card .card-content, 
 .card .card-content a {
-    font-weight: bold;
+    font-weight: normal;
 }
+
+.card-title {
+    text-shadow: 0px 2px 4px black;
+}
+
 #recipe-modal {
     padding: 10px;
     font-weight: bold;
