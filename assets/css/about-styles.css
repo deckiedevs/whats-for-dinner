@@ -27,25 +27,24 @@
     padding: 65px 0px;
 }
 .staff {
-    width: 900px;
+    width: 100%;
     margin: auto;
     overflow: auto;
-    padding-right: 30px;
+    padding: 50px 0px;
 }
 
 .staff img {
-    width: 100%;
     float: left;
     border-radius: 50%;
     border-color: var(--secondary-color);
-    padding-right: 30px;
+    margin: 0 50px 50px;
 }
 
 .staff-bio {
     float: left;
     width: 100%;
     color: var(--quaternary-color);
-    margin: auto;
+    margin: 0px 75px;
 }
 
 .text-left {
