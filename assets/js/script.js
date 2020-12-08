@@ -1,4 +1,4 @@
-var apiKey = '';
+var apiKey = "485cdff989f1474e9d84102838b6aa31";
 var ourRecipes = document.getElementById('our-recipes');
 var searchedRecipes = document.getElementById('searched-recipes');
 var searchBtn = document.getElementById('search-btn');
@@ -237,4 +237,4 @@ document.addEventListener('DOMContentLoaded', function() {
     var selectInstances = M.FormSelect.init(selectElems);
 });
 
-searchBtn.addEventListener('click', getInput);
+searchBtn.addEventListener('click', getInput); 
