@@ -34,18 +34,17 @@
 }
 
 .staff img {
-    width: 100%;
     float: left;
     border-radius: 50%;
     border-color: var(--secondary-color);
-    padding: 0px 30px;
+    margin: 0 50px 50px;
 }
 
 .staff-bio {
     float: left;
     width: 100%;
     color: var(--quaternary-color);
-    margin: auto;
+    margin: 0px 75px;
 }
 
 .text-left {
