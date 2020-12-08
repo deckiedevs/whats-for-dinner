@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+  --primary-color: #40c4ff;
+  --secondary-color: #00bfa5;
+  --tertiary-color: #f5f5f5;
+  --quaternary-color: #37474f;
+}
+
+section {
+    padding: 50px;
+  }
+
+section h4 {
+    padding-bottom: 50px;
+    font-weight: bolder;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--quaternary-color);
+    padding-bottom: 50px;
+}
+
+p {
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.hide {
+    display: none;
+}
+
+.nav-wrapper {
+    background-color: var(--tertiary-color);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.brand-logo {
+    color: var(--primary-color);
+}
+
+.hero-image {
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero h1 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    font-size: 78px;
+}
+
+.hero {
+    text-align: left;
+    color: var(--primary-color);
+    background-color: white;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: normal;
+    padding: 50px 50px 100px;
+}
+
+.hero p {
+    text-align: left;
+    color: var(--quaternary-color);
+    padding-right: 50px;
+}
+
+.hero button {
+    border: none;
+    padding: 10px 20px;
+    margin-top: 25px;
+    color: black;
+    background-color: var(--secondary-color);
+    text-align: center;
+    border-radius: 5px;
+  }
+
+.hero button:hover {
+    border: none;
+    outline: 0;
+    display: flex;
+    margin-top: 25px;
+    color: white;
+    background-color: var(--quaternary-color);
+    text-align: center;
+    cursor: pointer;
+}
+
+.page-footer h5 {
+    padding: 60px 0;
+}
+
+.card {
+    height: 400px;
+}
+
+.card .card-content, 
+.card .card-content a {
+    font-weight: normal;
+}
+
+.card-title {
+    text-shadow: 0px 2px 4px black;
+}
+
+#recipe-modal {
+    padding: 10px;
+    font-weight: bold;
+}
+
+#recipe-modal h5,
+#recipe-modal h6 { 
+    font-weight: bold;
+}
+
+#recipe-modal ol, #recipe-modal ul {
+     margin-left: 20px;
+}
+
+#recipe-modal ol li, #recipe-modal ul li {
+    margin-top: 7px;
+    padding-left: 8px;
+}
+
+#recipe-modal .row .col {
+    padding: 0;
+}

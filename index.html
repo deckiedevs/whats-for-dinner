@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>What's For Dinner?</title>
+  </head>
+  <body>
+
+    <!-- navigation -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">
+          <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons teal-text text-accent-4">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./about.html"><span class="teal-text text-accent-4">About</span></a></li>
+          <li><a href="./myrecipes.html"><span class="teal-text text-accent-4">My Recipes</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="./about.html">About Us</a></li>
+      <li><a href="./myrecipes.html">My Recipes</a></li>
+    </ul>
+
+    <!-- hero -->
+    <section class="row hero">
+      <div class="col s12 l6">
+        <h1 class="light-blue-text text-accent-2"><span class="blue-grey-text text-darken-3" style="font-weight: 100;">Ran Out </br>of </span>Recipes?</h1>
+        <p>Can't decide what to eat? That's where we come in! </br>
+        Enter your ingredients below and we'll help you decide.
+        </p>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <select id="cuisine-menu">
+                  <option value="" disabled selected>Choose a Cuisine</option>
+                  <option value="african">African</option>
+                  <option value="american">American</option>
+                  <option value="british">British</option>
+                  <option value="cajun">Cajun</option>
+                  <option value="caribbean">Caribbean</option>
+                  <option value="chinese">Chinese</option>
+                  <option value="european">European</option>
+                  <option value="french">French</option>
+                  <option value="german">German</option>
+                  <option value="greek">Greek</option>
+                  <option value="indian">Indian</option>
+                  <option value="irish">Irish</option>
+                  <option value="italian">Italian</option>
+                  <option value="japanese">Japanese</option>
+                  <option value="jewish">Jewish</option>
+                  <option value="korean">Korean</option>
+                  <option value="latin american">Latin</option>
+                  <option value="mediterranean">Mediterranean</option>
+                  <option value="mexican">Mexican</option>
+                  <option value="middle eastern">Middle Eastern</option>
+                  <option value="southern">Southern</option>
+                  <option value="spanish">Spanish</option>
+                  <option value="thai">Thai</option>
+                  <option value="vietnamese">Vietnamese</option>
+                  <option value="">Surprise me!</option>
+                </select>
+                <label for="cuisine-menu">Select a type of cuisine:</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <select id="diet-menu">
+                  <option value="" disabled selected>Choose a Diet Type</option>
+                  <option value="gluten-free">Gluten Free</option>
+                  <option value="ketogenic">Ketogenic</option>
+                  <option value="lacto-vegetarian">Lacto-Vegetarian</option>
+                  <option value="ovo-vegetarian">Ovo-Vegetarian</option>
+                  <option value="paleo">Paleo</option>
+                  <option value="pescetarian">Pescetarian</option>
+                  <option value="primal">Primal</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="whole30">Whole30</option>
+                  <option value="">None</option>
+                </select>
+                <label for="diet-menu">Diet Considerations:</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="ingredients" type="text" class="validate">
+                <label for="ingredients">Tell us what you've got!</label>
+                <button id="search-btn">Let's Get Cookin'!</button>
+              </div>
+            </div>
+          </form>           
+        </div>
+      </div>
+      <div class="col s12 l6 hero-image">
+        <img src="../whats-for-dinner/assets/images/hero-image.png" style="height: min-content;"></a>
+      </div>
+    </section>
+
+    <!-- cards -->
+    <section class="row grey lighten-4">
+      <!-- modal for error messages -->
+      <div id="error-modal" class="modal">
+        <div class="modal-content" id="error-message"></div> 
+      </div>
+
+      <div id="our-recipes">
+        <h4 class="light-blue-text text-accent-2 center">See Some Recipes Below and Start Cooking!</h4>
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card1-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card2-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card3-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+             <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card4-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card5-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card6-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- dynamically displays user selected -->
+      <div class="hide" id="searched-recipes"></div>
+
+      <!-- modal for full recipe -->
+      <div id="recipe-modal" class="modal">
+        <div class="modal-content" id="recipe-content">
+          <div class="row">
+            <div class="col s10">
+              <h5 id='recipe-header'></h4>
+              <div id="recipe-info"></div>
+            </div>
+            <div class="col s2 right-align">
+              <a class="btn-floating btn-large light-blue accent-2" id="fav-btn"><i class="material-icons" id="fav-icon"></i></a>
+            </div>
+          </div>
+          <h6>Ingredients</h3>
+          <div class="row">
+              <div class="col s6" id="recipes-col-1"></div>
+              <div class="col s6" id="recipes-col-2"></div>
+          </div>
+          <h6>Instructions</h3>
+          <div class="row" id="instructions"></div>
+          <h6 class="hide" id="wine-header">Suggested Wine Pairing</h5>
+          <div class="row" id="wine-pairing"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="page-footer white center">
+      <div>
+        <a href="/" class="brand-logo">
+          <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
+        </a>
+      </div>
+      <div class="footer-copyright white">
+        <div class="container blue-grey-text text-darken-2">
+        © 2020 The Most OK'est Group
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/8.1.0/math.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
