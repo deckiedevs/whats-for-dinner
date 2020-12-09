@@ -1,4 +1,4 @@
-var apiKey = "69996717298242299fca05fae802288c";
+var apiKey = "";
 var ourRecipes = document.getElementById('our-recipes');
 var searchedRecipes = document.getElementById('searched-recipes');
 var searchBtn = document.getElementById('search-btn');
