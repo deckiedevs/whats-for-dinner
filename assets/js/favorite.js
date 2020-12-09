@@ -1,63 +1,35 @@
 $(function(){
-    $( "a" ).click(function() {
-      $( "a,i" ).toggleClass( "press", 1000 );
+    $( "#fav-btn" ).click(function() {
+      $( "#fav-btn" ).toggleClass( "press", 1000 );
     });
 });
 
 //Main Variables
 var recipehistory = [];
- 
-//Var for getRecipeDetails
-var getRecipeDetails = function () {
-   var recipestored = JSON.parse(localStorage.getItem("recipe-header"));
-   if (recipestored !== null) {
-     recipehistory = recipestored;
-     for(var i=0;i<recipehistory.length;i++) {
-         if(i==8){
-             break;
-         }
-       //  creates links/buttons
-       recipelist = $("<a>").attr({
-         class: "fav-btn",
-         href: "a",
-         "fav-btn": i
-       });
-         // appends history as a button below the search field
-         recipelist.text(recipehistory[i]);
-         $("recipe-header").append(recipelist);      
-     }
-   }
-};
-
-// Save Recipe Name to LocalStorage 
-var saverecipe = function(recipe){
-    var inArray = recipehistory.includes(recipe);
-    if(!inArray && recipe !==""){
-        recipehistory.push(recipe);
-        localStorage.setItem("recipe-header", JSON.stringify(recipehistory));
-        var recipelist = $("<a>").attr(
-            {
-                class:"fav-btn",
-                href: "a",
-                "fav-btn": recipehistory.length
-            }
-        );
-        recipelist.text(recipe);
-        $("recipe-header").append(recipelist);
-
-    }
-};
-
-//Search Button
-$("#recipesearch").on("click",function(){
-  var recipe=$("#recipe-header").val(); 
-  getRecipe(recipe);
-  $("#recipe-header").val("");
-});
+var favoritesrecipes=localStorage.getItem("recipehistory");
+if (favoritesrecipes){
+  recipehistory=JSON.parse(favoritesrecipes);
+  
+}
 
 // History List
-$("fav-btn").on("click",function(e){
+$("#fav-btn").on("click",function(e){
+  $(this).toggleClass( "press", 1000 ).toggleClass("light-blue").toggleClass("accent-2");
  var callrecipe = e.target.innerHTML;
+ var recipeId = $(this).attr("data-id");
+ console.log(recipeId);
+ if (recipehistory.indexOf(recipeId)===-1){
+    recipehistory.push(recipeId);
+    localStorage.setItem("recipehistory",JSON.stringify(recipehistory));
+ }
+    else{
+      var index = recipehistory.indexOf(recipeId)
+      console.log(index);
+      recipehistory.splice(index,1);
+      console.log(recipehistory);
+      localStorage.setItem("recipehistory",JSON.stringify(recipehistory));
+    }
+
  $("#recipe-header").val(callrecipe);
  getRecipe(callrecipe);
 

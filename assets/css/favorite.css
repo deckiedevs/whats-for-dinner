@@ -1,27 +1,5 @@
-a.press {
+.press {
 	animation: size .4s;
 	color:#e23b3b;
-}
-
-a:hover {
-	color:#666;
-}
-
-a:before {
-    font-family:fontawesome;
-	font-style:normal;
-}
-
-i.press {
-	animation: size .4s;
-	color:#e23b3b;
-}
-
-i:hover {
-	color:#666;
-}
-
-i:before {
-    font-family:fontawesome;
-	font-style:normal;
+	background-color: #e23b3b;
 }
