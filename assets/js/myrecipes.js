@@ -1,83 +1,18 @@
-var apiKey = "69996717298242299fca05fae802288c";
+var apiKey = "";
 var ourRecipes = document.getElementById('our-recipes');
 var searchedRecipes = document.getElementById('searched-recipes');
 var searchBtn = document.getElementById('search-btn');
+var idArr = [];
 
-getInput = event => {
-    event.preventDefault();
-
-    var cuisineInput = document.getElementById('cuisine-menu').value;
-    var dietInput = document.getElementById('diet-menu').value;
-
-    var ingrInput = document.getElementById('ingredients')
-        .value
-        .trim()
-        .toLowerCase();
-    var ingrArr = [];
-    if (ingrInput) {
-        ingrArr.push(ingrInput.replace(/,/g, '').split(' '));
-    // } else {
-    //     errorMsg('Please enter at least one ingredient!')
-    };
-
-    getData(cuisineInput, dietInput, ingrArr);
-};
-
-errorMsg = message => {
-    var errorModal = document.getElementById('error-modal')
-    var instances = M.Modal.init(errorModal);
-    var instance = M.Modal.getInstance(errorModal);
-    instance.open();
-
-    var errorMessage = document.getElementById('error-message');
-    errorMessage.textContent = message;
-};
-
-// uses first API to get recipe IDs
-getData = (cuisine, diet, ingr) => {
-
-    var apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=9`;
-    var paraName = ['cuisine', 'diet', 'includeIngredients'];
-    var paraValue = [cuisine, diet, ingr];
-
-    // concatenates search parameters
-    for (var i = 0; i < paraValue.length; i++) {
-        if (paraValue[i].length > 0) {
-            apiUrl += `&${paraName[i]}=${paraValue[i]}`;
-        }
-    }
-
-    fetch(apiUrl).then(function(response) {
-
-        if (response.ok) {
-            response.json().then(function(data) {
-
-                if (data.results.length > 0) {
-                    console.log(data);
-                    getRecipe(data);
-                } else {
-                    errorMsg('No recipes found!  Try using fewer search parameters.');
-                }
-            });
-        } else {
-            errorMsg(`Error: ${response.statusText}`);
-        }
-    })
-    .catch(function(error) {
-        errorMsg('Unable to load recipes.  Please try again later.');
-    })
-};
-
-// uses recipe IDs to return detailed recipe info
 getRecipe = recipe => {
-    var idArr = [];
-    for (i = 0; i < recipe.results.length; i++) {
-        idArr.push(recipe.results[i].id);
-    };
+    var savedrecipes = localStorage.getItem("recipehistory");
+    if (savedrecipes) {
+        idArr = JSON.parse(savedrecipes);
+      }
+
 
     var recipeUrl = `https://api.spoonacular.com/recipes/informationBulk?apiKey=${apiKey}&ids=${idArr.join()}`;    
     fetch(recipeUrl).then(function(response) {
-
         if (response.ok) {
             response.json().then(function(data) {
                 console.log(data)
@@ -137,7 +72,6 @@ displayRecipes = recipes => {
     fullRecipe(recipes);
 };
 
-// recipe click
 fullRecipe = details => {
     var recipeHeader = document.getElementById('recipe-header');
     var recipeInfoEl = document.getElementById('recipe-info');
@@ -149,6 +83,7 @@ fullRecipe = details => {
     var winePairingEl = document.getElementById('wine-pairing');
     var favIcon = document.getElementById('fav-icon')
     var favBtn = document.getElementById('fav-btn');
+    console.log(recipeHeader)
 
 
     for (var i = 0; i < recipeCards.length; i++) {
@@ -165,7 +100,9 @@ fullRecipe = details => {
             recipeHeader.textContent = details[index].title;
             
             //reset fav-btn from previous recipe
-            if (recipehistory.indexOf(details[index].title)!==-1){
+            console.log(idArr)
+            console.log(details[index].id)
+            if (idArr.indexOf(details[index].id.toString())!==-1){
                 $("#fav-btn").addClass('press').removeClass("light-blue").removeClass("accent-2");
             }
             else{
@@ -219,7 +156,7 @@ fullRecipe = details => {
             }
         })
     }
-}
+};
 
 convertFraction = num => {
     var fractionObj = math.fraction(num);
@@ -251,5 +188,4 @@ document.addEventListener('DOMContentLoaded', function() {
     var selectElems = document.querySelectorAll('select');
     var selectInstances = M.FormSelect.init(selectElems);
 });
-
-searchBtn.addEventListener('click', getInput); 
+getRecipe()

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/favorite.css"/>
     <title>What's For Dinner?</title>
   </head>
   <body>
@@ -31,7 +32,132 @@
       <li><a href="./about.html">About</a></li>
       <li><a href="/">My Recipes</a></li>
     </ul>
+    <section class="row grey lighten-4">
+      <!-- modal for error messages -->
+      <div id="error-modal" class="modal">
+        <div class="modal-content" id="error-message"></div> 
+      </div>
 
+      <div id="our-recipes">
+        <h4 class="light-blue-text text-accent-2 center">See Some Recipes Below and Start Cooking!</h4>
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card1-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card2-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card3-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+             <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card4-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card5-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 l4">
+          <div class="card small hoverable">
+            <div class="card-image">
+              <img src="assets/images/../images/card6-image.png">
+              <span class="card-title">Recipe Name</span>
+            </div>
+            <div class="card-content">
+              <p>Small description of recipe here</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Want wine with that?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- dynamically displays user selected -->
+      <div class="hide" id="searched-recipes"></div>
+
+      <!-- modal for full recipe -->
+      <div id="recipe-modal" class="modal">
+        <div class="modal-content" id="recipe-content">
+          <div class="row">
+            <div class="col s10">
+              <h5 id='recipe-header'></h4>
+              <div id="recipe-info"></div>
+            </div>
+            <div class="col s2 right-align">
+              <a class="btn-floating btn-large light-blue accent-2" id="fav-btn"><i class="material-icons" id="fav-icon"></i></a>
+            </div>
+          </div>
+          <h6>Ingredients</h3>
+          <div class="row">
+              <div class="col s6" id="recipes-col-1"></div>
+              <div class="col s6" id="recipes-col-2"></div>
+          </div>
+          <h6>Instructions</h3>
+          <div class="row" id="instructions"></div>
+          <h6 class="hide" id="wine-header">Suggested Wine Pairing</h5>
+          <div class="row" id="wine-pairing"></div>
+        </div>
+      </div>
+    </section>
     <!-- footer -->
     <footer class="page-footer white center">
       <div>
@@ -47,6 +173,8 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/8.1.0/math.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/myrecipes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="./assets/js/favorite.js"></script>
   </body>
 </html>
