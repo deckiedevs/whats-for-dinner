@@ -16,7 +16,7 @@ section {
   }
 
 section h4 {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     font-weight: bolder;
 }
 
@@ -31,6 +31,10 @@ body, html {
 p {
     padding-bottom: 20px;
     font-size: 18px;
+}
+
+.row {
+    margin: auto;
 }
 
 .hide {
@@ -71,7 +75,7 @@ p {
 .hero p {
     text-align: left;
     color: var(--quaternary-color);
-    padding-right: 50px;
+    padding: 0 0 50px 0;
 }
 
 .hero button {
@@ -133,4 +137,39 @@ p {
 
 #recipe-modal .row .col {
     padding: 0;
+}
+
+section .avocados {
+    height: 50%;
+    position: relative;
+}
+
+.avocado-image {
+    position: absolute;
+    overflow: auto;
+    left: 0px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.avocados-text h4 {
+    font-family: 'Red Hat Display', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.avocados-text p {
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    width: 65%;
+    color: white;
+}
+
+/* media queries */
+
+@media (max-width: 460px) {
+    .avocado-image {
+      display: none;
+    }
 }
