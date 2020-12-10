@@ -5,7 +5,7 @@ UCF Boot Camp: Week 7/8 Group 2 Project 1
 ![website preview](./assets/images/logo.png)
 <br>
 
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://deckiedevs.mit-license.org/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/deckiedevs/whats-for-dinner)
 <br>
 <br>
