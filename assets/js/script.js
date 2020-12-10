@@ -165,11 +165,13 @@ fullRecipe = details => {
             recipeHeader.textContent = details[index].title;
             
             //reset fav-btn from previous recipe
-            if (recipehistory.indexOf(details[index].title)!==-1){
+            if (recipehistory.indexOf(JSON.stringify(details[index].id))!==-1){
                 $("#fav-btn").addClass('press').removeClass("light-blue").removeClass("accent-2");
+                $("#fav-icon").text("favorite");
             }
             else{
                 $("#fav-btn").removeClass('press').addClass("light-blue").addClass("accent-2");
+                $("#fav-icon").text("favorite_border");
             };
             var readyTime = details[index].readyInMinutes;
             var servings = details[index].servings;
@@ -182,7 +184,6 @@ fullRecipe = details => {
             recipeInfoEl.innerHTML = `Prep Time: ${readyTime} | Servings: ${servings} | Recipe From: <a href="${sourceUrl}" target="_blank">${sourceSite}</a>`
 
             // favorite button
-            favIcon.textContent = 'favorite_border';
 
             // grabs all ingredients from data
             var ingrList = details[index].extendedIngredients;

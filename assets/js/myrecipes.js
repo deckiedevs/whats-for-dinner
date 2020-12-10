@@ -104,10 +104,13 @@ fullRecipe = details => {
             console.log(details[index].id)
             if (idArr.indexOf(details[index].id.toString())!==-1){
                 $("#fav-btn").addClass('press').removeClass("light-blue").removeClass("accent-2");
+                $("#fav-icon").text("favorite");
             }
             else{
                 $("#fav-btn").removeClass('press').addClass("light-blue").addClass("accent-2");
-            };
+                $("#fav-icon").text("favorite_border");
+            }
+
             var readyTime = details[index].readyInMinutes;
             var servings = details[index].servings;
             var sourceSite = details[index].sourceName;
@@ -117,9 +120,6 @@ fullRecipe = details => {
             
 
             recipeInfoEl.innerHTML = `Prep Time: ${readyTime} | Servings: ${servings} | Recipe From: <a href="${sourceUrl}" target="_blank">${sourceSite}</a>`
-
-            // favorite button
-            favIcon.textContent = 'favorite_border';
 
             // grabs all ingredients from data
             var ingrList = details[index].extendedIngredients;

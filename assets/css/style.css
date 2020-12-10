@@ -29,17 +29,13 @@ html {
     padding-bottom: 50px;
 }
 
-p {
+.hero p {
     padding-bottom: 20px;
     font-size: 18px;
 }
 
 .row {
     margin: auto;
-}
-
-.hide {
-    display: none;
 }
 
 .nav-wrapper {
@@ -118,12 +114,6 @@ p {
 
 #recipe-modal {
     padding: 10px;
-    font-weight: bold;
-}
-
-#recipe-modal h5,
-#recipe-modal h6 {
-    font-weight: bold;
 }
 
 #recipe-modal ol,
@@ -169,7 +159,6 @@ section .avocados {
 }
 
 /* media queries */
-
 @media (max-width: 460px) {
 
     section {
