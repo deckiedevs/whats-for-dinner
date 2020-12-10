@@ -10,27 +10,27 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <link rel="stylesheet" href="./assets/css/favorite.css"/>
-    <title>What's For Dinner?</title>
+    <title>What's For Dinner? - My Recipes</title>
   </head>
   <body>
 
     <!-- navigation -->
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">
+        <a href="./index.html" class="brand-logo">
           <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons teal-text text-accent-4">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="./about.html"><span class="teal-text text-accent-4">About</span></a></li>
-          <li><a href="/"><span class="teal-text text-accent-4">My Recipes</span></a></li>
+          <li><a href="./myrecipes.html"><span class="teal-text text-accent-4">My Recipes</span></a></li>
         </ul>
       </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
       <li><a href="./about.html">About</a></li>
-      <li><a href="/">My Recipes</a></li>
+      <li><a href="./myrecipes.html">My Recipes</a></li>
     </ul>
     <section class="row grey lighten-4">
       <!-- modal for error messages -->
@@ -38,104 +38,16 @@
         <div class="modal-content" id="error-message"></div> 
       </div>
 
-      <div id="our-recipes">
-        <h4 class="light-blue-text text-accent-2 center">See Some Recipes Below and Start Cooking!</h4>
-        <div class="col s12 l4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="assets/images/../images/card1-image.png">
-              <span class="card-title">Recipe Name</span>
-            </div>
-            <div class="card-content">
-              <p>Small description of recipe here</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Want wine with that?</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 l4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="assets/images/../images/card2-image.png">
-              <span class="card-title">Recipe Name</span>
-            </div>
-            <div class="card-content">
-              <p>Small description of recipe here</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Want wine with that?</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 l4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="assets/images/../images/card3-image.png">
-              <span class="card-title">Recipe Name</span>
-            </div>
-            <div class="card-content">
-             <p>Small description of recipe here</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Want wine with that?</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 l4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="assets/images/../images/card4-image.png">
-              <span class="card-title">Recipe Name</span>
-            </div>
-            <div class="card-content">
-              <p>Small description of recipe here</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Want wine with that?</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 l4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="assets/images/../images/card5-image.png">
-              <span class="card-title">Recipe Name</span>
-            </div>
-            <div class="card-content">
-              <p>Small description of recipe here</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Want wine with that?</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 l4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="assets/images/../images/card6-image.png">
-              <span class="card-title">Recipe Name</span>
-            </div>
-            <div class="card-content">
-              <p>Small description of recipe here</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Want wine with that?</a>
-            </div>
-          </div>
-        </div>
+      <div class="center" id="our-recipes">
+        <h4 class="light-blue-text text-accent-2 center">You don't have any favorite recipes!</h4>
+        <p>Save some favorites to see them here!</p>
       </div>
     
       <!-- dynamically displays user selected -->
       <div class="hide" id="searched-recipes"></div>
 
       <!-- modal for full recipe -->
-      <div id="recipe-modal" class="modal">
+      <div id="searched-recipe" class="modal recipe-modal">
         <div class="modal-content" id="recipe-content">
           <div class="row">
             <div class="col s10">
@@ -161,13 +73,13 @@
     <!-- footer -->
     <footer class="page-footer white center">
       <div>
-        <a href="/" class="brand-logo">
+        <a href="./index.html" class="brand-logo">
           <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
         </a>
       </div>
       <div class="footer-copyright white">
         <div class="container blue-grey-text text-darken-2">
-        © 2020 The Most OK'est Group
+        © 2020 The Most Okayest Group
         </div>
       </div>
     </footer>

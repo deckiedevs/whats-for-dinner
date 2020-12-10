@@ -2,25 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
 :root {
-  --primary-color: #40c4ff;
-  --secondary-color: #00bfa5;
-  --tertiary-color: #f5f5f5;
-  --quaternary-color: #37474f;
+    --primary-color: #40c4ff;
+    --secondary-color: #00bfa5;
+    --tertiary-color: #f5f5f5;
+    --quaternary-color: #37474f;
 }
 
 section {
     padding: 50px;
-  }
+}
 
 section h4 {
     padding-bottom: 30px;
     font-weight: bolder;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     font-family: 'Work Sans', sans-serif;
@@ -28,17 +29,13 @@ body, html {
     padding-bottom: 50px;
 }
 
-p {
+.hero p {
     padding-bottom: 20px;
     font-size: 18px;
 }
 
 .row {
     margin: auto;
-}
-
-.hide {
-    display: none;
 }
 
 .nav-wrapper {
@@ -69,7 +66,6 @@ p {
     background-color: white;
     font-family: 'Red Hat Display', sans-serif;
     font-weight: normal;
-    padding: 50px 50px 100px;
 }
 
 .hero p {
@@ -86,7 +82,7 @@ p {
     background-color: var(--secondary-color);
     text-align: center;
     border-radius: 5px;
-  }
+}
 
 .hero button:hover {
     border: none;
@@ -103,11 +99,7 @@ p {
     padding: 60px 0;
 }
 
-.card {
-    height: 400px;
-}
-
-.card .card-content, 
+.card .card-content,
 .card .card-content a {
     font-weight: normal;
 }
@@ -116,27 +108,27 @@ p {
     text-shadow: 0px 2px 4px black;
 }
 
-#recipe-modal {
+.recipe-modal {
     padding: 10px;
-    font-weight: bold;
 }
 
-#recipe-modal h5,
-#recipe-modal h6 { 
-    font-weight: bold;
+.recipe-modal ol,
+.recipe-modal ul {
+    margin-left: 20px;
 }
 
-#recipe-modal ol, #recipe-modal ul {
-     margin-left: 20px;
-}
-
-#recipe-modal ol li, #recipe-modal ul li {
+.recipe-modal ol li,
+.recipe-modal ul li {
     margin-top: 7px;
     padding-left: 8px;
 }
 
-#recipe-modal .row .col {
+.recipe-modal .row .col {
     padding: 0;
+}
+
+.recipe-modal p {
+    margin-top: 10px;
 }
 
 section .salad-bowl {
@@ -196,11 +188,27 @@ section .salad-bowl {
 }
 
 @media screen and (max-width: 640px) {
+    
+    section {
+        padding: 20px;
+    }
+
+    .nav-wrapper {
+        background-color: var(--tertiary-color);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
     .avocado-image {
       width: 60%;
       margin-top: -125px;
       right: -25%;
     }
+    
     .salad-bowl-image {
         width: 45%;
         margin-top: 250px;
