@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <link rel="stylesheet" href="./assets/css/favorite.css"/>
     <title>What's For Dinner? - My Recipes</title>
+    <link rel="shortcut icon" type="image/svg" href="./assets/images/svg/whats-for-dinner-favicon-color.svg" />
   </head>
   <body>
 
@@ -18,36 +19,39 @@
     <nav>
       <div class="nav-wrapper">
         <a href="./index.html" class="brand-logo">
-          <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
+          <img src="./assets/images/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
         </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons teal-text text-accent-4">menu</i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons teal-text text-accent-4">menu</i>
+        </a>
         <ul class="right hide-on-med-and-down">
           <li><a href="./about.html"><span class="teal-text text-accent-4">About</span></a></li>
           <li><a href="./myrecipes.html"><span class="teal-text text-accent-4">My Recipes</span></a></li>
         </ul>
       </div>
     </nav>
-
+    <!-- hamburger menu -->
     <ul class="sidenav" id="mobile-demo">
       <li><a href="./about.html">About</a></li>
       <li><a href="./myrecipes.html">My Recipes</a></li>
     </ul>
+    
     <section class="row grey lighten-4">
       <!-- modal for error messages -->
       <div id="error-modal" class="modal">
         <div class="modal-content" id="error-message"></div> 
       </div>
 
-      <div class="center" id="our-recipes">
+      <div class="center" id="no-recipes">
         <h4 class="light-blue-text text-accent-2 center">You don't have any favorite recipes!</h4>
         <p>Save some favorites to see them here!</p>
       </div>
     
       <!-- dynamically displays user selected -->
-      <div class="hide" id="searched-recipes"></div>
+      <div class="hide" id="my-recipes"></div>
 
       <!-- modal for full recipe -->
-      <div id="searched-recipe" class="modal recipe-modal">
+      <div id="my-recipe-full" class="modal recipe-modal">
         <div class="modal-content" id="recipe-content">
           <div class="row">
             <div class="col s10">
@@ -70,11 +74,12 @@
         </div>
       </div>
     </section>
+    
     <!-- footer -->
     <footer class="page-footer white center">
       <div>
         <a href="./index.html" class="brand-logo">
-          <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
+          <img src="./assets/images/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
         </a>
       </div>
       <div class="footer-copyright white">
