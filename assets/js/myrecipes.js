@@ -37,7 +37,7 @@ displayRecipes = recipes => {
     for (var i = 0; i < recipes.length; i++) {
         var modalTrigger = document.createElement('a');
         modalTrigger.classList.add('recipe-link', 'modal-trigger')
-        modalTrigger.setAttribute('href', '#recipe-modal');
+        modalTrigger.setAttribute('href', '#searched-recipe');
         searchedRecipes.appendChild(modalTrigger); 
 
         var columnEl = document.createElement('div');
@@ -83,8 +83,6 @@ fullRecipe = details => {
     var winePairingEl = document.getElementById('wine-pairing');
     var favIcon = document.getElementById('fav-icon')
     var favBtn = document.getElementById('fav-btn');
-    console.log(recipeHeader)
-
 
     for (var i = 0; i < recipeCards.length; i++) {
         recipeCards[i].addEventListener('click', function(event) {

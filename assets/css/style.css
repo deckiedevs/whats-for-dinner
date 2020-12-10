@@ -99,10 +99,6 @@ html {
     padding: 60px 0;
 }
 
-.card {
-    height: 400px;
-}
-
 .card .card-content,
 .card .card-content a {
     font-weight: normal;
@@ -112,23 +108,27 @@ html {
     text-shadow: 0px 2px 4px black;
 }
 
-#recipe-modal {
+.recipe-modal {
     padding: 10px;
 }
 
-#recipe-modal ol,
-#recipe-modal ul {
+.recipe-modal ol,
+.recipe-modal ul {
     margin-left: 20px;
 }
 
-#recipe-modal ol li,
-#recipe-modal ul li {
+.recipe-modal ol li,
+.recipe-modal ul li {
     margin-top: 7px;
     padding-left: 8px;
 }
 
-#recipe-modal .row .col {
+.recipe-modal .row .col {
     padding: 0;
+}
+
+.recipe-modal p {
+    margin-top: 10px;
 }
 
 section .avocados {

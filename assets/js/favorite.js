@@ -20,10 +20,12 @@ $("#fav-btn").on("click", function (e) {
   console.log(recipeId);
 
   if (recipehistory.indexOf(recipeId) === -1) {
+    $("#fav-icon").text("favorite");
     recipehistory.push(recipeId);
     localStorage.setItem("recipehistory", JSON.stringify(recipehistory));
   } else {
     var index = recipehistory.indexOf(recipeId)
+    $("#fav-icon").text("favorite_border");
     console.log(index);
     recipehistory.splice(index, 1);
     console.log(recipehistory);
