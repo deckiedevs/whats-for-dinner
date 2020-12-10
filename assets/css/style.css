@@ -139,26 +139,41 @@ p {
     padding: 0;
 }
 
-section .avocados {
+section .salad-bowl {
     height: 50%;
     position: relative;
 }
 
 .avocado-image {
     position: absolute;
-    overflow: auto;
-    left: 0px;
+    object-fit: contain;
+    margin-top: -125px;
+    right: -100px;
+    max-width: 100%;
+    height: auto;
+    display: block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.avocados-text h4 {
+.salad-bowl-image {
+    position: absolute;
+    margin-bottom: -200px;
+    left: 0px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.avocado-text h4 {
     font-family: 'Red Hat Display', sans-serif;
     text-align: center;
     color: white;
 }
 
-.avocados-text p {
+.avocado-text p {
     text-align: center;
     font-size: 18px;
     margin: auto;
@@ -168,8 +183,26 @@ section .avocados {
 
 /* media queries */
 
-@media (max-width: 460px) {
+@media screen and (max-width: 1420px) {
     .avocado-image {
-      display: none;
+      width: 35%;
+      margin-top: -130px;
+      right: 0%;
+    }
+    .salad-bowl-image {
+        width: 30%;
+        margin-top: 125px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .avocado-image {
+      width: 60%;
+      margin-top: -125px;
+      right: -25%;
+    }
+    .salad-bowl-image {
+        width: 45%;
+        margin-top: 250px;
     }
 }
