@@ -244,12 +244,16 @@ convertFraction = num => {
     return `${wholeNum} ${numerator}/${denominator}`
 };
 
+// initializes modal, forms, and hamburger menu
 document.addEventListener('DOMContentLoaded', function() {
     var modalElems = document.querySelectorAll('.modal');
     var modalInstances = M.Modal.init(modalElems);
 
     var selectElems = document.querySelectorAll('select');
     var selectInstances = M.FormSelect.init(selectElems);
+
+    var navElems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(navElems);
 });
 
 searchBtn.addEventListener('click', getInput); 

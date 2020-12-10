@@ -2,25 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
 :root {
-  --primary-color: #40c4ff;
-  --secondary-color: #00bfa5;
-  --tertiary-color: #f5f5f5;
-  --quaternary-color: #37474f;
+    --primary-color: #40c4ff;
+    --secondary-color: #00bfa5;
+    --tertiary-color: #f5f5f5;
+    --quaternary-color: #37474f;
 }
 
 section {
     padding: 50px;
-  }
+}
 
 section h4 {
     padding-bottom: 30px;
     font-weight: bolder;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     font-family: 'Work Sans', sans-serif;
@@ -69,7 +70,6 @@ p {
     background-color: white;
     font-family: 'Red Hat Display', sans-serif;
     font-weight: normal;
-    padding: 50px 50px 100px;
 }
 
 .hero p {
@@ -86,7 +86,7 @@ p {
     background-color: var(--secondary-color);
     text-align: center;
     border-radius: 5px;
-  }
+}
 
 .hero button:hover {
     border: none;
@@ -107,7 +107,7 @@ p {
     height: 400px;
 }
 
-.card .card-content, 
+.card .card-content,
 .card .card-content a {
     font-weight: normal;
 }
@@ -122,15 +122,17 @@ p {
 }
 
 #recipe-modal h5,
-#recipe-modal h6 { 
+#recipe-modal h6 {
     font-weight: bold;
 }
 
-#recipe-modal ol, #recipe-modal ul {
-     margin-left: 20px;
+#recipe-modal ol,
+#recipe-modal ul {
+    margin-left: 20px;
 }
 
-#recipe-modal ol li, #recipe-modal ul li {
+#recipe-modal ol li,
+#recipe-modal ul li {
     margin-top: 7px;
     padding-left: 8px;
 }
@@ -169,7 +171,18 @@ section .avocados {
 /* media queries */
 
 @media (max-width: 460px) {
-    .avocado-image {
-      display: none;
+
+    section {
+        padding: 20px;
+    }
+
+    .nav-wrapper {
+        background-color: var(--tertiary-color);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
     }
 }
