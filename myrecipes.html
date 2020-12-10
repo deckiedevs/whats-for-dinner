@@ -9,44 +9,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css"/>
-    <title>What's For Dinner?</title>
+    <link rel="stylesheet" href="./assets/css/favorite.css"/>
+    <title>What's For Dinner? - My Recipes</title>
+    <link rel="shortcut icon" type="image/svg" href="./assets/images/svg/whats-for-dinner-favicon-color.svg" />
   </head>
   <body>
 
     <!-- navigation -->
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">
-          <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
+        <a href="./index.html" class="brand-logo">
+          <img src="./assets/images/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
         </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons teal-text text-accent-4">menu</i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons teal-text text-accent-4">menu</i>
+        </a>
         <ul class="right hide-on-med-and-down">
           <li><a href="./about.html"><span class="teal-text text-accent-4">About</span></a></li>
-          <li><a href="/"><span class="teal-text text-accent-4">My Recipes</span></a></li>
+          <li><a href="./myrecipes.html"><span class="teal-text text-accent-4">My Recipes</span></a></li>
         </ul>
       </div>
     </nav>
-
+    <!-- hamburger menu -->
     <ul class="sidenav" id="mobile-demo">
       <li><a href="./about.html">About</a></li>
-      <li><a href="/">My Recipes</a></li>
+      <li><a href="./myrecipes.html">My Recipes</a></li>
     </ul>
+    
+    <section class="row grey lighten-4">
+      <!-- modal for error messages -->
+      <div id="error-modal" class="modal">
+        <div class="modal-content" id="error-message"></div> 
+      </div>
 
+      <div class="center" id="no-recipes">
+        <h4 class="light-blue-text text-accent-2 center">You don't have any favorite recipes!</h4>
+        <p>Save some favorites to see them here!</p>
+      </div>
+    
+      <!-- dynamically displays user selected -->
+      <div class="hide" id="my-recipes"></div>
+
+      <!-- modal for full recipe -->
+      <div id="my-recipe-full" class="modal recipe-modal">
+        <div class="modal-content" id="recipe-content">
+          <div class="row">
+            <div class="col s10">
+              <h5 id='recipe-header'></h4>
+              <div id="recipe-info"></div>
+            </div>
+            <div class="col s2 right-align">
+              <a class="btn-floating btn-large light-blue accent-2" id="fav-btn"><i class="material-icons" id="fav-icon"></i></a>
+            </div>
+          </div>
+          <h6>Ingredients</h3>
+          <div class="row">
+              <div class="col s6" id="recipes-col-1"></div>
+              <div class="col s6" id="recipes-col-2"></div>
+          </div>
+          <h6>Instructions</h3>
+          <div class="row" id="instructions"></div>
+          <h6 class="hide" id="wine-header">Suggested Wine Pairing</h5>
+          <div class="row" id="wine-pairing"></div>
+        </div>
+      </div>
+    </section>
+    
     <!-- footer -->
     <footer class="page-footer white center">
       <div>
-        <a href="/" class="brand-logo">
-          <img src="../whats-for-dinner/assets/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
+        <a href="./index.html" class="brand-logo">
+          <img src="./assets/images/svg/whats-for-dinner-logo-color.svg" width="200px" height="65px">
         </a>
       </div>
       <div class="footer-copyright white">
         <div class="container blue-grey-text text-darken-2">
-        © 2020 The Most OK'est Group
+        © 2020 The Most Okayest Group
         </div>
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/8.1.0/math.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/myrecipes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="./assets/js/favorite.js"></script>
   </body>
 </html>

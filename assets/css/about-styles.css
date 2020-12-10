@@ -1,82 +1,69 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.team1 {
+  text-align: center;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: auto;
+  padding: 20px 0px;
 }
 
-:root {
-  --primary-color: #40c4ff;
-  --secondary-color: #00bfa5;
-  --tertiary-color: #f5f5f5;
-  --quaternary-color: #37474f;
+.team {
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+  padding: 50px 0px;
 }
 
-.nav-wrapper {
-  background-color: var(--tertiary-color);
-  padding-left: 50px;
-  padding-right: 50px;
-  position: relative;
+.team img {
+  float: left;
+  border-radius: 50%;
+  border-color: var(--secondary-color);
+  margin: 0 50px 50px;
 }
 
-.staff1 {
-    text-align: center;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: auto;
-    padding: 65px 0px;
-}
-.staff {
-    width: 900px;
-    margin: auto;
-    overflow: auto;
-    padding-right: 30px;
-}
-
-.staff img {
-    width: 100%;
-    float: left;
-    border-radius: 50%;
-    border-color: var(--secondary-color);
-    padding-right: 30px;
-}
-
-.staff-bio {
-    float: left;
-    width: 100%;
-    color: var(--quaternary-color);
-    margin: auto;
+.team-bio {
+  float: left;
+  width: 100%;
+  color: var(--quaternary-color);
+  margin: 0px 75px;
 }
 
 .text-left {
-    text-align: left;
-    margin: auto;
-  }
-  
+  text-align: left;
+  margin: auto;
+}
+
 .text-right {
-    text-align: right;
-    margin: auto;
-  }
+  text-align: right;
+  margin: auto;
+}
 
-.staff-bio h3 {
-    font-size: 34px;
-  }
-  
-.staff-bio h4 {
-    font-weight: lighter;
-    font-size: 26px;
-  }
-  
-.staff-bio p {
-    font-size: 17px;
-    line-height: 1.5;
-    font-weight: normal;
-  }
+.team-bio h3 {
+  font-size: 34px;
+}
 
-.your-staff {
+.team-bio h4 {
+  font-weight: lighter;
+  font-size: 26px;
+}
+
+.team-bio p {
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.your-team {
   margin: auto;
 }
 
 .container {
   margin: auto;
+}
+
+
+@media (max-width: 460px) {
+  .team img {
+    margin: auto;
+  }
 }

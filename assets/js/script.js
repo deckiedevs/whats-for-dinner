@@ -1,4 +1,4 @@
-var apiKey = '';
+var apiKey = "";
 var ourRecipes = document.getElementById('our-recipes');
 var searchedRecipes = document.getElementById('searched-recipes');
 var searchBtn = document.getElementById('search-btn');
@@ -16,8 +16,6 @@ getInput = event => {
     var ingrArr = [];
     if (ingrInput) {
         ingrArr.push(ingrInput.replace(/,/g, '').split(' '));
-    // } else {
-    //     errorMsg('Please enter at least one ingredient!')
     };
 
     getData(cuisineInput, dietInput, ingrArr);
@@ -47,12 +45,13 @@ getData = (cuisine, diet, ingr) => {
         }
     }
 
-    fetch(apiUrl).then(function(response) {
+    fetch(apiUrl).then(function (response) {
 
         if (response.ok) {
-            response.json().then(function(data) {
+            response.json().then(function (data) {
 
                 if (data.results.length > 0) {
+                    console.log(data);
                     getRecipe(data);
                 } else {
                     errorMsg('No recipes found!  Try using fewer search parameters.');
@@ -62,9 +61,9 @@ getData = (cuisine, diet, ingr) => {
             errorMsg(`Error: ${response.statusText}`);
         }
     })
-    .catch(function(error) {
-        errorMsg('Unable to load recipes.  Please try again later.');
-    })
+        .catch(function (error) {
+            errorMsg('Unable to load recipes.  Please try again later.');
+        })
 };
 
 // uses recipe IDs to return detailed recipe info
@@ -74,11 +73,11 @@ getRecipe = recipe => {
         idArr.push(recipe.results[i].id);
     };
 
-    var recipeUrl = `https://api.spoonacular.com/recipes/informationBulk?apiKey=${apiKey}&ids=${idArr.join()}`;    
-    fetch(recipeUrl).then(function(response) {
+    var recipeUrl = `https://api.spoonacular.com/recipes/informationBulk?apiKey=${apiKey}&ids=${idArr.join()}`;
+    fetch(recipeUrl).then(function (response) {
 
         if (response.ok) {
-            response.json().then(function(data) {
+            response.json().then(function (data) {
                 console.log(data)
                 displayRecipes(data);
             });
@@ -101,13 +100,13 @@ displayRecipes = recipes => {
     for (var i = 0; i < recipes.length; i++) {
         var modalTrigger = document.createElement('a');
         modalTrigger.classList.add('recipe-link', 'modal-trigger')
-        modalTrigger.setAttribute('href', '#recipe-modal');
-        searchedRecipes.appendChild(modalTrigger); 
+        modalTrigger.setAttribute('href', '#searched-recipe-full');
+        searchedRecipes.appendChild(modalTrigger);
 
         var columnEl = document.createElement('div');
         columnEl.classList.add('col', 's12', 'm6', 'l4');
         modalTrigger.appendChild(columnEl);
-    
+
         var cardEl = document.createElement('div');
         cardEl.classList.add('card', 'recipe-card', 'hoverable');
         cardEl.setAttribute('id', `card-${i}`);
@@ -116,19 +115,19 @@ displayRecipes = recipes => {
         var imgEl = document.createElement('div');
         imgEl.classList.add('card-image');
         cardEl.appendChild(imgEl);
-    
+
         var recipeImg = document.createElement('img');
         // use placeholder if no image is available
         if (recipes[i].image) {
             recipeImg.setAttribute('src', recipes[i].image);
             recipeImg.setAttribute('alt', recipes[i].title);
         } else {
-            recipeImg.setAttribute('src', 'https://via.placeholder.com/400x300?text=No+image+found!+:(')   
+            recipeImg.setAttribute('src', 'https://via.placeholder.com/400x300?text=No+image+found!+:(')
         }
         imgEl.appendChild(recipeImg);
 
         var recipeTitle = document.createElement('div');
-        recipeTitle.classList.add('card-content');   
+        recipeTitle.classList.add('card-content');
         recipeTitle.textContent = recipes[i].title;
         cardEl.appendChild(recipeTitle);
     };
@@ -136,6 +135,7 @@ displayRecipes = recipes => {
     fullRecipe(recipes);
 };
 
+// recipe click
 fullRecipe = details => {
     var recipeHeader = document.getElementById('recipe-header');
     var recipeInfoEl = document.getElementById('recipe-info');
@@ -145,10 +145,10 @@ fullRecipe = details => {
     var instructions = document.getElementById('instructions');
     var wineHeader = document.getElementById('wine-header')
     var winePairingEl = document.getElementById('wine-pairing');
-    var favIcon = document.getElementById('fav-icon')
+    var favBtn = document.getElementById('fav-btn');
 
     for (var i = 0; i < recipeCards.length; i++) {
-        recipeCards[i].addEventListener('click', function(event) {
+        recipeCards[i].addEventListener('click', function (event) {
 
             // clears modal from previous recipe
             colOne.textContent = '';
@@ -159,15 +159,24 @@ fullRecipe = details => {
 
             // header information
             recipeHeader.textContent = details[index].title;
+
+            //reset fav-btn from previous recipe
+            if (recipehistory.indexOf(JSON.stringify(details[index].id)) !== -1) {
+                $("#fav-btn").addClass('press').removeClass("light-blue").removeClass("accent-2");
+                $("#fav-icon").text("favorite");
+            }
+            else {
+                $("#fav-btn").removeClass('press').addClass("light-blue").addClass("accent-2");
+                $("#fav-icon").text("favorite_border");
+            };
             var readyTime = details[index].readyInMinutes;
             var servings = details[index].servings;
             var sourceSite = details[index].sourceName;
             var sourceUrl = details[index].sourceUrl;
+            var apiId = details[index].id;
+            favBtn.setAttribute('data-id', apiId);
 
             recipeInfoEl.innerHTML = `Prep Time: ${readyTime} | Servings: ${servings} | Recipe From: <a href="${sourceUrl}" target="_blank">${sourceSite}</a>`
-
-            // favorite button
-            favIcon.textContent = 'favorite_border';
 
             // grabs all ingredients from data
             var ingrList = details[index].extendedIngredients;
@@ -176,7 +185,7 @@ fullRecipe = details => {
                 var ingrQty = ingrList[j].measures.us.amount;
                 var ingrUnit = ingrList[j].measures.us.unitShort;
                 var ingrName = ingrList[j].name;
-                
+
                 if (!Number.isInteger(ingrQty)) {
                     ingrQty = convertFraction(ingrQty).trim();
                 }
@@ -197,7 +206,7 @@ fullRecipe = details => {
                 // suggested wine pairing
                 var winePairing = details[index].winePairing.pairingText;
 
-                if (winePairing) { 
+                if (winePairing) {
                     wineHeader.classList.remove('hide');
                     winePairingEl.textContent = winePairing;
                 }
@@ -212,8 +221,9 @@ convertFraction = num => {
     var denominator = fractionObj.d;
     var wholeNum = '';
 
+    // converts improper fraction to mixed fraction
     if (numerator > denominator) {
-        wholeNum = Math.floor(numerator / denominator);
+        wholeNum = `${Math.floor(numerator / denominator)} `;
         numerator %= denominator
     }
 
@@ -221,20 +231,24 @@ convertFraction = num => {
     if (numerator === 333) {
         numerator = 1;
         denominator = 3;
-    } else if (numerator === 666) {
+    } else if (numerator === 666 || numerator === 667) {
         numerator = 2;
         denominator = 3;
     }
-    
-    return `${wholeNum} ${numerator}/${denominator}`
+
+    return `${wholeNum}${numerator}/${denominator}`
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+// initializes modal, forms, and hamburger menu
+document.addEventListener('DOMContentLoaded', function () {
     var modalElems = document.querySelectorAll('.modal');
     var modalInstances = M.Modal.init(modalElems);
 
     var selectElems = document.querySelectorAll('select');
     var selectInstances = M.FormSelect.init(selectElems);
+
+    var navElems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(navElems);
 });
 
-searchBtn.addEventListener('click', getInput);
+searchBtn.addEventListener('click', getInput); 
