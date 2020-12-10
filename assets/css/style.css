@@ -29,6 +29,11 @@ html {
     padding-bottom: 50px;
 }
 
+body {
+    
+    overflow-x: hidden;
+}
+
 .hero p {
     padding-bottom: 20px;
     font-size: 18px;
