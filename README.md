@@ -6,8 +6,9 @@ UCF Boot Camp: Week 7/8 Group 2 Project 1
 <br>
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://deckiedevs.mit-license.org/)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/deckiedevs/whats-for-dinner)
 <br>
+
+
 <br>
 
 ## Purpose
@@ -26,6 +27,7 @@ UCF Boot Camp: Week 7/8 Group 2 Project 1
 4. [Built With/Technologies](#built-with/technologies)
 5. [API's](#apis)
 6. [Issues](#issues)
+7. [Repository](#repository)
 <br>
 <br>
 
@@ -100,3 +102,11 @@ UCF Boot Camp: Week 7/8 Group 2 Project 1
 ## Issues
 [![GitHub issues](https://img.shields.io/github/issues/deckiedevs/whats-for-dinner.svg)](https://GitHub.com/deckiedevs/whats-for-dinner/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/deckiedevs/whats-for-dinner.svg)](https://GitHub.com/deckiedevs/whats-for-dinner/issues?q=is%3Aissue+is%3Aclosed)
+
+## Repository
+![GitHub repo size](https://img.shields.io/github/repo-size/deckiedevs/whats-for-dinner)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/deckiedevs/whats-for-dinner)
+![Most recent commit](https://img.shields.io/github/last-commit/deckiedevs/whats-for-dinner)
+![GitHub top language](https://img.shields.io/github/languages/top/deckiedevs/whats-for-dinner)
+
+[Repository Link](https://GitHub.com/deckiedevs/whats-for-dinner/)
