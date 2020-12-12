@@ -102,6 +102,8 @@ UCF Boot Camp: Week 7/8 Group 2 Project 1
 ## Issues
 [![GitHub issues](https://img.shields.io/github/issues/deckiedevs/whats-for-dinner.svg)](https://GitHub.com/deckiedevs/whats-for-dinner/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/deckiedevs/whats-for-dinner.svg)](https://GitHub.com/deckiedevs/whats-for-dinner/issues?q=is%3Aissue+is%3Aclosed)
+<br>
+<br>
 
 ## Repository
 ![GitHub repo size](https://img.shields.io/github/repo-size/deckiedevs/whats-for-dinner)
