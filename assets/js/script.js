@@ -1,4 +1,4 @@
-var apiKey = process.env.API_KEY;
+var apiKey = "f373d2f3b2ed4c5799d7569b7b804930";
 var ourRecipes = document.getElementById('our-recipes');
 var searchedRecipes = document.getElementById('searched-recipes');
 var searchBtn = document.getElementById('search-btn');
